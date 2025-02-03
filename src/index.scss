@@ -1,0 +1,76 @@
+@import "./theme.scss";
+@import "bootstrap/scss/bootstrap";
+
+// css reset
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family, serif;
+  color: $secondary;
+}
+
+p {
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  accent-color: $primary;
+  height: 1rem;
+  width: 1rem;
+}
+
+// custom class
+
+.max-w-sm {
+  max-width: 384px;
+}
+
+.max-w-md {
+  max-width: 448px;
+}
+
+.max-w-lg {
+  max-width: 512px;
+}
+
+.max-w-xl {
+  max-width: 576px;
+}
+
+.max-w-2xl {
+  max-width: 672px;
+}
+
+.max-w-3xl {
+  max-width: 768px;
+}
+
+.outline-none {
+  outline: none;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.separator::after,
+.separator::before {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background-color: $secondary;
+}
