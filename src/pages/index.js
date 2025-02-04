@@ -9,6 +9,7 @@ import Home from "./Settings/Home/Home";
 import General from "./Settings/Workspace/General/General";
 import Billing from "./Settings/Workspace/Billing/Billing";
 import Teammates from "./Settings/Workspace/Teammates/Teammates";
+import Messenger from "./Settings/Channels/Messenger/Messenger";
 
 import Profile from "./Profile/Profile";
 
@@ -22,5 +23,6 @@ export {
   General,
   Billing,
   Teammates,
+  Messenger,
   Profile,
 };

@@ -8,6 +8,7 @@ import {
   GettingStarted,
   Home,
   Inbox,
+  Messenger,
   Profile,
   Settings,
   SignIn,
@@ -54,9 +55,13 @@ createRoot(root).render(
           {/* Settings pages */}
           <Route path="settings" element={<Settings />}>
             <Route index element={<Home />} />
+            {/* Workspace pages */}
             <Route path="workspace/general" element={<General />} />
             <Route path="workspace/billing" element={<Billing />} />
             <Route path="workspace/teammates" element={<Teammates />} />
+
+            {/* Chennel pages */}
+            <Route path="channels/messenger" element={<Messenger />} />
           </Route>
 
           <Route path="profile" element={<Profile />} />
