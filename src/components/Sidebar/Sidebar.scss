@@ -1,0 +1,22 @@
+@import "@/theme.scss";
+
+.nav-item {
+  transition: all $transition-smooth;
+
+  &:hover,
+  &:focus {
+    background-color: $white15;
+  }
+}
+
+.item-label,
+.sidebar .pin-btn {
+  display: none !important;
+}
+
+.sidebar:hover .item-label,
+.sidebar:focus .item-label,
+.sidebar:hover .pin-btn,
+.sidebar:focus .pin-btn {
+  display: flex !important;
+}

@@ -31,7 +31,7 @@ createRoot(root).render(
         {/* protected pages */}
         <Route
           element={
-            <ProtectedRoute authentication>
+            <ProtectedRoute authentication={false}>
               <DashboardLayout />
             </ProtectedRoute>
           }
