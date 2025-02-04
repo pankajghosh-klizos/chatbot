@@ -40,7 +40,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="sidebar rounded-3 p-2 bg-primary text-white">
+    <aside className="sidebar rounded-3 p-2 bg-success-subtle text-white">
       <nav className="d-flex flex-column gap-5 h-100">
         <div className="d-flex align-items-center justify-content-between p-2 gap-2">
           <Link to={"/getting-started"} className="lh-1 py-1">

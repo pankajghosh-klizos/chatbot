@@ -1,4 +1,15 @@
-import { Search } from "@/components";
+import { Dropdown, Search } from "@/components";
+import { FaCreditCard } from "react-icons/fa6";
+import { HiMenuAlt2 } from "react-icons/hi";
+import {
+  HiOutlineClipboard,
+  HiOutlineFolder,
+  HiOutlinePhone,
+  HiOutlineChatBubbleLeftEllipsis,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineEnvelope,
+} from "react-icons/hi2";
+import { LuSquareUserRound } from "react-icons/lu";
 import { NavLink, Outlet } from "react-router";
 
 const Settings = () => {
@@ -11,22 +22,78 @@ const Settings = () => {
     {
       id: "workspace",
       label: "Workspace",
-      slug: "/settings/workspace",
+      options: [
+        {
+          id: "general",
+          icon: <HiMenuAlt2 size={20} />,
+          label: "General",
+          slug: "/settings/workspace/general",
+        },
+        {
+          id: "general",
+          icon: <FaCreditCard size={20} />,
+          label: "General",
+          slug: "/settings/workspace/general",
+        },
+        {
+          id: "general",
+          icon: <LuSquareUserRound size={20} />,
+          label: "General",
+          slug: "/settings/workspace/general",
+        },
+      ],
     },
     {
       id: "channels",
-      label: "Cannels",
-      slug: "/settings/channels",
+      label: "Channels",
+      options: [
+        {
+          id: "messenger",
+          icon: <HiOutlineChatBubbleLeftEllipsis size={20} />,
+          label: "Messenger",
+          slug: "/settings/workspace/messenger",
+        },
+        {
+          id: "email",
+          icon: <HiOutlineEnvelope size={20} />,
+          label: "Email",
+          slug: "/settings/workspace/email",
+        },
+        {
+          id: "phone",
+          icon: <HiOutlinePhone size={20} />,
+          label: "Phone",
+          slug: "/settings/workspace/phone",
+        },
+        {
+          id: "switch",
+          icon: <HiOutlineClipboard size={20} />,
+          label: "Switch",
+          slug: "/settings/workspace/switch",
+        },
+        {
+          id: "sms",
+          icon: <HiOutlineChatBubbleLeftRight size={20} />,
+          label: "SMS",
+          slug: "/settings/workspace/sms",
+        },
+        {
+          id: "socialchannels",
+          icon: <HiOutlineFolder size={20} />,
+          label: "Social Channels",
+          slug: "/settings/workspace/social-channels",
+        },
+      ],
     },
     {
       id: "integrations",
       label: "Integrations",
-      slug: "/settings/integrations",
+      options: [],
     },
     {
       id: "helpcenter",
       label: "Help Center",
-      slug: "/settings/help-center",
+      options: [],
     },
   ];
 
@@ -40,18 +107,42 @@ const Settings = () => {
         <ul className="list-unstyled d-flex flex-column gap-2">
           {settingsMenuItems.map((mI) => (
             <li key={mI.id}>
-              <NavLink
-                to={mI.slug}
-                className={({ isActive }) =>
-                  `border text-decoration-none d-block py-2 px-2 rounded-2 fw-medium ${
-                    isActive
-                      ? "text-primary opacity-100"
-                      : "text-secondary opacity-75"
-                  }`
-                }
-              >
-                {mI.label}
-              </NavLink>
+              {!mI?.options ? (
+                <NavLink
+                  to={mI.slug}
+                  className={({ isActive }) =>
+                    `text-decoration-none d-block p-2 px-3 rounded-2 fw-medium ${
+                      isActive
+                        ? "text-primary opacity-100"
+                        : "text-secondary opacity-75"
+                    }`
+                  }
+                >
+                  {mI.label}
+                </NavLink>
+              ) : (
+                <Dropdown title={mI.label}>
+                  <ul className="list-unstyled rounded-2">
+                    {mI?.options.map((o) => (
+                      <li key={o.id}>
+                        <NavLink
+                          to={o.slug}
+                          className={({ isActive }) =>
+                            `text-decoration-none d-flex w-100 align-items-center gap-2 p-2 rounded-3 ${
+                              isActive
+                                ? "text-primary opacity-10"
+                                : "text-secondary opacity-75"
+                            }`
+                          }
+                        >
+                          <span className="lh-1">{o.icon}</span>
+                          <span>{o.label}</span>
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </Dropdown>
+              )}
             </li>
           ))}
         </ul>
