@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { ToastContainer } from "react-toastify";
 import { AuthLayout, DashboardLayout } from "@/layouts";
 import {
+  Billing,
+  General,
   GettingStarted,
   Home,
   Inbox,
@@ -10,6 +12,7 @@ import {
   Settings,
   SignIn,
   SignUp,
+  Teammates,
 } from "@/pages";
 import { ProtectedRoute } from "@/components";
 import { Provider } from "react-redux";
@@ -45,12 +48,17 @@ createRoot(root).render(
           }
         >
           <Route path="getting-started" element={<GettingStarted />} />
+
           <Route path="inbox" element={<Inbox />} />
 
           {/* Settings pages */}
           <Route path="settings" element={<Settings />}>
             <Route index element={<Home />} />
+            <Route path="workspace/general" element={<General />} />
+            <Route path="workspace/billing" element={<Billing />} />
+            <Route path="workspace/teammates" element={<Teammates />} />
           </Route>
+
           <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
