@@ -63,7 +63,7 @@ const Home = () => {
             <RiRobot2Line size={22} />
           </div>
 
-          <h3 className="text-white">
+          <h3 className="text-white mb-0">
             Chat<span className="fw-lighter">Bot</span>
           </h3>
 
