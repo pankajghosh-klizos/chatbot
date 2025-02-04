@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-import { RiChatSmile3Fill, RiRobot2Line } from "react-icons/ri";
-import { FiMinusCircle } from "react-icons/fi";
+import { RiChatSmile3Fill } from "react-icons/ri";
 import { TbHome } from "react-icons/tb";
 import { HiOutlineTicket } from "react-icons/hi";
 import { LuCircleHelp, LuMessageSquareText } from "react-icons/lu";
 import { motion } from "motion/react";
-import { Search } from "@/components";
 import { Home, Message, Ticket, Help } from "./screens";
 import "./ChatBot.scss";
 
@@ -46,30 +44,8 @@ const ChatBot = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         style={{ display: isBotOpen ? "block" : "none" }}
       >
-        {/* Screen header */}
-        <div className="p-3 bg-success-subtle shadow-sm position-sticky top-0">
-          <div className="d-flex gap-2 justify-content-between align-items-center mb-3">
-            <div className="bg-primary rounded-circle p-2 text-black d-flex align-items-center justify-content-center">
-              <RiRobot2Line size={22} />
-            </div>
-
-            <h3 className="text-white">
-              Chat<span className="fw-lighter">Bot</span>
-            </h3>
-
-            <button className="btn p-0 border-0">
-              <FiMinusCircle size={22} color="#37CA27" />
-            </button>
-          </div>
-
-          <Search
-            placeholder="Search for help or articles"
-            className="rounded-3 ps-3 pe-1"
-          />
-        </div>
-
         {/* Screen content */}
-        <div className="p-2 flex-grow-1">
+        <div className="flex-grow-1">
           {selectedMenuItem === "home" && <Home />}
           {selectedMenuItem === "message" && <Message />}
           {selectedMenuItem === "tickets" && <Ticket />}
