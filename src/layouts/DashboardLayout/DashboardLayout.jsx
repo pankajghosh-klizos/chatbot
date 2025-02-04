@@ -1,6 +1,7 @@
 import { Header, Sidebar } from "@/components";
 import { Outlet } from "react-router";
 import "./DashboardLayout.scss";
+import ChatBot from "@/components/ChatBot/ChatBot";
 
 const DashboardLayout = () => {
   return (
@@ -12,6 +13,8 @@ const DashboardLayout = () => {
 
         <main className="main-content border flex-grow-1 rounded-3">
           <Outlet />
+
+          <ChatBot />
         </main>
       </div>
     </div>
