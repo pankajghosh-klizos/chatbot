@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { AuthLayout, DashboardLayout } from "@/layouts";
 import {
   GettingStarted,
+  Home,
   Inbox,
   Profile,
   Settings,
@@ -45,7 +46,11 @@ createRoot(root).render(
         >
           <Route path="getting-started" element={<GettingStarted />} />
           <Route path="inbox" element={<Inbox />} />
-          <Route path="settings" element={<Settings />} />
+
+          {/* Settings pages */}
+          <Route path="settings" element={<Settings />}>
+            <Route index element={<Home />} />
+          </Route>
           <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>

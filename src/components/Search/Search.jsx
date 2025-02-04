@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import { forwardRef } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const Search = forwardRef(function Search(
-  { placeholder, className = "" },
+  { placeholder = "Search", className = "" },
   ref
 ) {
   return (
@@ -27,3 +28,8 @@ const Search = forwardRef(function Search(
 });
 
 export default Search;
+
+Search.propTypes = {
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
+};

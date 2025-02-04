@@ -11,7 +11,7 @@ const DashboardLayout = () => {
       <div className="d-flex gap-2 flex-grow-1">
         <Sidebar />
 
-        <main className="main-content border flex-grow-1 rounded-3">
+        <main className="main-content flex-grow-1 rounded-3">
           <Outlet />
 
           <ChatBot />

@@ -29,6 +29,10 @@ input[type="checkbox"] {
 
 // custom class
 
+.max-w-xs {
+  max-width: 320px;
+}
+
 .max-w-sm {
   max-width: 384px;
 }
@@ -51,6 +55,22 @@ input[type="checkbox"] {
 
 .max-w-3xl {
   max-width: 768px;
+}
+
+.max-w-4xl {
+  max-width: 896px;
+}
+
+.max-w-5xl {
+  max-width: 1024px;
+}
+
+.max-w-6xl {
+  max-width: 1152px;
+}
+
+.max-w-7xl {
+  max-width: 1280px;
 }
 
 .outline-none {
